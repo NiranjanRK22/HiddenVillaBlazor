@@ -5,20 +5,30 @@
 <div class="border p-2 mt-2" style="background-color:aqua;">
     <h3 class="text-info">Room List (Using Component)</h3>
     <div class="row container">
+        <div class="col-12">
+            <h4 class="text-info">Hotel Room's'</h4>
+            <span>Rooms selected - @SelectedRooms</span>
+        </div>
     @foreach (var room in RoomsList) {
-       <IndividualRoom Room="@room"></IndividualRoom>
+       <IndividualRoom OnRoomCheckBoxSelection="@RoomSelectionCounterChanged" Room="@room"></IndividualRoom>
     }
     </div>
     <h3 class="text-info">Hotel Amenities [Assignment]</h3>
     <div class="row container">
         @foreach(var amenity in AmenitiesList)
         {
-            <IndividualAmenity Amenity="@amenity"></IndividualAmenity>
+            <IndividualAmenity Amenity="@amenity" OnAmenitySelection="AmenitySelectionChanged">
+                <FirstFragment>#1</FirstFragment>
+                <SecondFragment>#2</SecondFragment>
+            </IndividualAmenity>
         }
     </div>
+    <span class="text-secondary">Selected Amenity: @SelectedAmenity</span>
 </div>
 
 @code {
+    public int SelectedRooms { get; set; } = 0;
+    public string SelectedAmenity { get; set; } = "";
     string SelectedRoomProp = "";
     List<BlazorRoom> RoomsList = new List<BlazorRoom>();
 
@@ -88,4 +98,20 @@
     Amenities HotelAmenities = new Amenities();
     List<Amenities> AmenitiesList = new List<Amenities>();
 
+    protected void RoomSelectionCounterChanged(bool isRoomSelected)
+    {
+        if (isRoomSelected)
+        {
+            SelectedRooms++;
+        }
+        else
+        {
+            SelectedRooms--;
+        }
+    }
+
+    protected void AmenitySelectionChanged(string amenity)
+    {
+        SelectedAmenity = amenity;
+    }
 }

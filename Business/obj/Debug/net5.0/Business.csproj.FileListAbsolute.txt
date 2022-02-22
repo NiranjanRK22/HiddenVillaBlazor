@@ -1,0 +1,12 @@
+E:\Blazor\HiddenVilla\Business\bin\Debug\net5.0\Business.deps.json
+E:\Blazor\HiddenVilla\Business\bin\Debug\net5.0\Business.dll
+E:\Blazor\HiddenVilla\Business\bin\Debug\net5.0\ref\Business.dll
+E:\Blazor\HiddenVilla\Business\bin\Debug\net5.0\Business.pdb
+E:\Blazor\HiddenVilla\Business\obj\Debug\net5.0\Business.csproj.AssemblyReference.cache
+E:\Blazor\HiddenVilla\Business\obj\Debug\net5.0\Business.GeneratedMSBuildEditorConfig.editorconfig
+E:\Blazor\HiddenVilla\Business\obj\Debug\net5.0\Business.AssemblyInfoInputs.cache
+E:\Blazor\HiddenVilla\Business\obj\Debug\net5.0\Business.AssemblyInfo.cs
+E:\Blazor\HiddenVilla\Business\obj\Debug\net5.0\Business.csproj.CoreCompileInputs.cache
+E:\Blazor\HiddenVilla\Business\obj\Debug\net5.0\Business.dll
+E:\Blazor\HiddenVilla\Business\obj\Debug\net5.0\ref\Business.dll
+E:\Blazor\HiddenVilla\Business\obj\Debug\net5.0\Business.pdb
