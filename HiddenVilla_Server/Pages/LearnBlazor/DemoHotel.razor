@@ -1,20 +1,21 @@
 ﻿@page "/demohotel"
 @using Model
+
 <h2>We will display hotel rooms and amenities here!</h2>
-<div style="background-color:aqua;">
-    <h3>Room List (Using Component)</h3>
+<div class="border p-2 mt-2" style="background-color:aqua;">
+    <h3 class="text-info">Room List (Using Component)</h3>
+    <div class="row container">
     @foreach (var room in RoomsList) {
-       <div style="background-color: white; padding: 10px;">
-           <h4>Room - @room.Id</h4>
-           <p>@room.RoomName</p>
-           <p>@room.Price</p>
-           <label>
-               <input type="checkbox" @bind-value="@Room.IsActive"/> Is Active
-           </label>
-           <p>This room is @(Room.IsActive? "Active" : "Inactive")</p>
-           
-       </div>
+       <IndividualRoom Room="@room"></IndividualRoom>
     }
+    </div>
+    <h3 class="text-info">Hotel Amenities [Assignment]</h3>
+    <div class="row container">
+        @foreach(var amenity in AmenitiesList)
+        {
+            <IndividualAmenity Amenity="@amenity"></IndividualAmenity>
+        }
+    </div>
 </div>
 
 @code {
@@ -63,5 +64,28 @@
             new BlazorRoomProp{Id= 2, Name="Occupancy", Value= "5"}
             }
         });
+
+        AmenitiesList.Add(new Amenities()
+        {
+            Id = 111,
+            Name = "Gym",
+            Description = "24x7 Gym room is available"
+        });
+        AmenitiesList.Add(new Amenities()
+        {
+            Id = 222,
+            Name = "Swimming Pool",
+            Description = "Pool room is open from 6 am to 10 pm"
+        });
+        AmenitiesList.Add(new Amenities()
+        {
+            Id = 333,
+            Name = "Free Breakfast",
+            Description = "Enjoy Free Breakfast outside hotel"
+        });
     }
+
+    Amenities HotelAmenities = new Amenities();
+    List<Amenities> AmenitiesList = new List<Amenities>();
+
 }

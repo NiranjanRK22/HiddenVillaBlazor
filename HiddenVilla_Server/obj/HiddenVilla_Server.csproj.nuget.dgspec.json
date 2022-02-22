@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Blazor\\HiddenVilla\\HiddenVilla_Server\\HiddenVilla_Server.csproj": {}
+    "C:\\Users\\Niranjan\\Dev\\Blazor\\HiddenVilla_Server\\HiddenVilla_Server.csproj": {}
   },
   "projects": {
-    "E:\\Blazor\\HiddenVilla\\HiddenVilla_Server\\HiddenVilla_Server.csproj": {
+    "C:\\Users\\Niranjan\\Dev\\Blazor\\HiddenVilla_Server\\HiddenVilla_Server.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Blazor\\HiddenVilla\\HiddenVilla_Server\\HiddenVilla_Server.csproj",
+        "projectUniqueName": "C:\\Users\\Niranjan\\Dev\\Blazor\\HiddenVilla_Server\\HiddenVilla_Server.csproj",
         "projectName": "HiddenVilla_Server",
-        "projectPath": "E:\\Blazor\\HiddenVilla\\HiddenVilla_Server\\HiddenVilla_Server.csproj",
-        "packagesPath": "C:\\Users\\niranjanr\\.nuget\\packages\\",
-        "outputPath": "E:\\Blazor\\HiddenVilla\\HiddenVilla_Server\\obj\\",
+        "projectPath": "C:\\Users\\Niranjan\\Dev\\Blazor\\HiddenVilla_Server\\HiddenVilla_Server.csproj",
+        "packagesPath": "C:\\Users\\Niranjan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Niranjan\\Dev\\Blazor\\HiddenVilla_Server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\niranjanr\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Niranjan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -49,12 +49,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.NETCore.App.Host.win-x64",
-              "version": "[5.0.14, 5.0.14]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
