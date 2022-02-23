@@ -90,6 +90,13 @@ using HiddenVilla_Server.Pages.LearnBlazor.LearnBlazorComponent;
 #line hidden
 #nullable disable
 #nullable restore
+#line 12 "E:\Blazor\HiddenVilla\HiddenVilla_Server\_Imports.razor"
+using HiddenVilla_Server.Helper;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 2 "E:\Blazor\HiddenVilla\HiddenVilla_Server\Pages\LearnBlazor\BindProp.razor"
 using Model;
 

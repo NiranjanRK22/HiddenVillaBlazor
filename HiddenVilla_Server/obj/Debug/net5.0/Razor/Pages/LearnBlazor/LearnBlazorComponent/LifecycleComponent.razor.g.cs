@@ -86,6 +86,13 @@ using HiddenVilla_Server.Pages.LearnBlazor.LearnBlazorComponent;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 12 "E:\Blazor\HiddenVilla\HiddenVilla_Server\_Imports.razor"
+using HiddenVilla_Server.Helper;
+
+#line default
+#line hidden
+#nullable disable
     public partial class LifecycleComponent : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998

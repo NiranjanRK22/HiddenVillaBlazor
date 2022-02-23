@@ -10,3 +10,8 @@ E:\Blazor\HiddenVilla\Business\obj\Debug\net5.0\Business.csproj.CoreCompileInput
 E:\Blazor\HiddenVilla\Business\obj\Debug\net5.0\Business.dll
 E:\Blazor\HiddenVilla\Business\obj\Debug\net5.0\ref\Business.dll
 E:\Blazor\HiddenVilla\Business\obj\Debug\net5.0\Business.pdb
+E:\Blazor\HiddenVilla\Business\bin\Debug\net5.0\DataAccess.dll
+E:\Blazor\HiddenVilla\Business\bin\Debug\net5.0\Models.dll
+E:\Blazor\HiddenVilla\Business\bin\Debug\net5.0\DataAccess.pdb
+E:\Blazor\HiddenVilla\Business\bin\Debug\net5.0\Models.pdb
+E:\Blazor\HiddenVilla\Business\obj\Debug\net5.0\Business.csproj.CopyComplete
