@@ -2,7 +2,6 @@ E:\Blazor\HiddenVilla\Common\bin\Debug\net5.0\Common.deps.json
 E:\Blazor\HiddenVilla\Common\bin\Debug\net5.0\Common.dll
 E:\Blazor\HiddenVilla\Common\bin\Debug\net5.0\ref\Common.dll
 E:\Blazor\HiddenVilla\Common\bin\Debug\net5.0\Common.pdb
-E:\Blazor\HiddenVilla\Common\obj\Debug\net5.0\Common.csproj.AssemblyReference.cache
 E:\Blazor\HiddenVilla\Common\obj\Debug\net5.0\Common.GeneratedMSBuildEditorConfig.editorconfig
 E:\Blazor\HiddenVilla\Common\obj\Debug\net5.0\Common.AssemblyInfoInputs.cache
 E:\Blazor\HiddenVilla\Common\obj\Debug\net5.0\Common.AssemblyInfo.cs
@@ -10,3 +9,4 @@ E:\Blazor\HiddenVilla\Common\obj\Debug\net5.0\Common.csproj.CoreCompileInputs.ca
 E:\Blazor\HiddenVilla\Common\obj\Debug\net5.0\Common.dll
 E:\Blazor\HiddenVilla\Common\obj\Debug\net5.0\ref\Common.dll
 E:\Blazor\HiddenVilla\Common\obj\Debug\net5.0\Common.pdb
+E:\Blazor\HiddenVilla\Common\obj\Debug\net5.0\Common.csproj.AssemblyReference.cache

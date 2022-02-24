@@ -97,6 +97,13 @@ using HiddenVilla_Server.Helper;
 #line hidden
 #nullable disable
 #nullable restore
+#line 13 "E:\Blazor\HiddenVilla\HiddenVilla_Server\_Imports.razor"
+using Blazored.TextEditor;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 2 "E:\Blazor\HiddenVilla\HiddenVilla_Server\Pages\LearnBlazor\DemoHotel.razor"
 using Model;
 

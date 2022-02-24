@@ -97,6 +97,13 @@ using HiddenVilla_Server.Helper;
 #line hidden
 #nullable disable
 #nullable restore
+#line 13 "E:\Blazor\HiddenVilla\HiddenVilla_Server\_Imports.razor"
+using Blazored.TextEditor;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
 #line 3 "E:\Blazor\HiddenVilla\HiddenVilla_Server\Pages\HotelRoom\HotelRoomUpsert.razor"
 using Models;
 
@@ -106,6 +113,13 @@ using Models;
 #nullable restore
 #line 4 "E:\Blazor\HiddenVilla\HiddenVilla_Server\Pages\HotelRoom\HotelRoomUpsert.razor"
 using Business.Repository.IRepository;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "E:\Blazor\HiddenVilla\HiddenVilla_Server\Pages\HotelRoom\HotelRoomUpsert.razor"
+using HiddenVilla_Server.Service.IService;
 
 #line default
 #line hidden
@@ -120,13 +134,16 @@ using Business.Repository.IRepository;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 50 "E:\Blazor\HiddenVilla\HiddenVilla_Server\Pages\HotelRoom\HotelRoomUpsert.razor"
+#line 113 "E:\Blazor\HiddenVilla\HiddenVilla_Server\Pages\HotelRoom\HotelRoomUpsert.razor"
        
     [Parameter]
     public int? Id { get; set; }
 
     private HotelRoomDTO HotelRoomModel { get; set; } = new HotelRoomDTO();
     private string Title { get; set; } = "Create";
+    public BlazoredTextEditor QuillHtml { get; set; } = new BlazoredTextEditor();
+    private HotelRoomImageDTO RoomImage { get; set; } = new HotelRoomImageDTO();
+    private bool IsImageUploadProcessStarted { get; set; } = false;
 
     protected async override Task OnInitializedAsync()
     {
@@ -135,6 +152,10 @@ using Business.Repository.IRepository;
             //updating
             Title = "Update";
             HotelRoomModel = await HotelRoomRepository.GetHotelRoom(Id.Value);
+            if (HotelRoomModel?.HotelRoomImages != null)
+            {
+                HotelRoomModel.ImageUrls = HotelRoomModel.HotelRoomImages.Select(u => u.RoomImageUrl).ToList();
+            }
         }
         else
         {
@@ -164,10 +185,11 @@ using Business.Repository.IRepository;
             {
                 //create
                 var createdResult = await HotelRoomRepository.CreateHotelRoom(HotelRoomModel);
+                //await AddHotelRoomImage(createdResult);
                 await JsRuntime.ToastrSuccess("Hotel Room created successfully");
             }
         }
-        catch(Exception ex)
+        catch (Exception ex)
         {
             //log exceptions
         }
@@ -177,9 +199,76 @@ using Business.Repository.IRepository;
         NavigationManager.NavigateTo("hotel-room");
     }
 
+    private async Task HandleImageUpload(InputFileChangeEventArgs e)
+    {
+        IsImageUploadProcessStarted = true;
+        try
+        {
+            var images = new List<string>();
+            if (e.GetMultipleFiles().Count > 0)
+            {
+                foreach (var file in e.GetMultipleFiles())
+                {
+                    System.IO.FileInfo fileInfo = new System.IO.FileInfo(file.Name);
+                    if (fileInfo.Extension.ToLower() == ".jpg" ||
+                        fileInfo.Extension.ToLower() == ".png" ||
+                        fileInfo.Extension.ToLower() == ".jpeg")
+                    {
+                        var uploadedImagePath = await FileUpload.UploadFile(file);
+                        images.Add(uploadedImagePath);
+                    }
+                    else
+                    {
+                        await JsRuntime.ToastrError("Please select .jpg/.jpeg/.png file only");
+                        return;
+                    }
+                }
+
+                if (images.Any())
+                {
+                    if (HotelRoomModel.ImageUrls != null && HotelRoomModel.ImageUrls.Any())
+                    {
+                        HotelRoomModel.ImageUrls.AddRange(images);
+                    }
+                    else
+                    {
+                        HotelRoomModel.ImageUrls = new List<string>();
+                        HotelRoomModel.ImageUrls.AddRange(images);
+                    }
+                }
+                else
+                {
+                    await JsRuntime.ToastrError("Image uploading failed");
+                    return;
+                }
+            }
+            IsImageUploadProcessStarted = false;
+        }
+        catch (Exception ex)
+        {
+            await JsRuntime.ToastrError(ex.Message);
+        }
+    }
+
+    //private async Task AddHotelRoomImage(HotelRoomDTO roomDetails)
+    //{
+    //    foreach (var imageUrl in HotelRoomModel.ImageUrls)
+    //    {
+    //        RoomImage = new HotelRoomImageDTO()
+    //        {
+    //            RoomId = roomDetails.Id,
+    //            RoomImageUrl = imageUrl
+    //        };
+    //        await HotelImagesRepository.CreateHotelRoomImage(RoomImage);
+    //    }
+    //}
+
+ 
+
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private IFileUpload FileUpload { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IJSRuntime JsRuntime { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private NavigationManager NavigationManager { get; set; }
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private IHotelRoomRepository HotelRoomRepository { get; set; }
